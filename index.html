@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Aplicações</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#jogo-da-velha">Jogo da Velha</a></li>
+            <li><a href="#lista-de-tarefas">Lista de Tarefas</a></li>
+            <li><a href="#area-de-pesquisa">Área de Pesquisa</a></li>
+            <li><a href="#cronometro">Cronômetro</a></li>
+            <li><a href="#mudar-tema">Mudar Tema</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#sorteio">Sorteio</a></li>
+            <li><a href="#hamburguer">Hamburgueria</a></li>
+            <li><a href="#jokenpo">Jokenpô</a></li>
+        </ul>
+    </nav>
+
+    <div id="sorteio" class="section">
+
+        <img class="imgSorteio" src="./img/dado.png" alt="imagem-Sorteio">
+        <h2 class="sorteioh2">Sortear um Número</h2>
+        <div>
+            <input placeholder="entre" class="input-min" type="number">
+            <input placeholder="e" class="input-max" type="number">
+        </div>
+        <button onclick="generateNumber()" class="buttonSorteio">Sortear</button>
+    </div>
+
+
+
+    <div id="jogo-da-velha" class="section">
+
+        <table>
+            <tr>
+                <td id="cell-0-0"></td>
+                <td id="cell-0-1"></td>
+                <td id="cell-0-2"></td>
+            </tr>
+            <tr>
+                <td id="cell-1-0"></td>
+                <td id="cell-1-1"></td>
+                <td id="cell-1-2"></td>
+            </tr>
+            <tr>
+                <td id="cell-2-0"></td>
+                <td id="cell-2-1"></td>
+                <td id="cell-2-2"></td>
+            </tr>
+        </table>
+
+
+        <div class="botoesJDV">
+            <button id="iniciarJDV">Iniciar Jogo</button>
+            <button id="limparJDV">Limpar Tabuleiro</button>
+        </div>
+
+    </div>
+
+    <div id="lista-de-tarefas" class="section">
+        <button id="openPopupBtn">Abrir Lista de Tarefas</button>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closePopupBtn">&times;</span>
+                <h2>Adicionar Tarefa</h2>
+                <input type="text" id="taskInput" placeholder="Digite sua tarefa aqui">
+                <button id="addTaskBtn">Adicionar Tarefa</button>
+                <h2>Lista de Tarefas</h2>
+                <ul id="taskList">
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="jokenpo" class="section">
+
+        <div id="jokenpo-items">
+            <h1 id="text-jkp">JoKenPô</h1>
+            <div id="buttons-jkp">
+                <button id="rock" onclick="jogar('rock')">&#x1F44A;</button>
+                <button id="paper" onclick="jogar('paper')">&#x1F590;</button>
+                <button id="scissors" onclick="jogar('scissors')">&#x270C;</button>
+            </div>
+            <p class="result"></p>
+            <p class="your-score">Sua Pontuação: <span id="humanScore">0</span></p>
+            <p class="machine-score">Pontuação da Máquina: <span id="machineScore">0</span></p>
+
+        </div>
+
+    </div>
+
+
+    <div id="area-de-pesquisa" class="section">
+        <div class="pesquisa">
+            <h1 class="textoM">Deixa acontecer naturalmente</h1>
+            <div class="search-container">
+                <input onkeypress="curiar()" class="euputo" type="text" placeholder="Pesquisar...">
+                <button onclick="clickbutton()" class="search-button">pesquisar</button>
+                <img class="buttona" src="./img/lupa.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="cronometro-container">
+        <div id="cronometro" class="section">
+            <div id="imagemContainer">
+            </div>
+            <div id="cronometro-wrapper">
+                <p id="tempo">00:00:00</p>
+                <button id="iniciarButton">Iniciar Contagem</button>
+                <button id="stopButton">Pausar Contagem</button>
+                <button id="zerarButton">Zerar Contagem</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="shop" class="section">
+        <div class="card">
+            <img src="./img/cachorroVo.jpg" alt="Foto do Animal 1">
+            <h2>Raça: Shih-Tzu </h2>
+            <p>Personalidade: Tipico cachorro de madame, fresco</p>
+            <p>Apelido: Pitoco</p>
+            <button class="learn-more">Ler mais</button>
+        </div>
+
+        <div class="card">
+            <img src="./img/cachorro iota.jpg" alt="Foto do Animal 2">
+            <h2>Raça: Border Collie</h2>
+            <p>Personalidade: Cachorro atlético com muita energia</p>
+            <p>Apelido: Apolo</p>
+            <button class="learn-more">Ler mais</button>
+        </div>
+        <div class="card">
+            <img src="img/cachorra baba.jpg" alt="Foto do Animal 2">
+            <h2>Raça: Pitbull</h2>
+            <p>Personalidade: Cachorro caótico e bagunceiro, porém leal</p>
+            <p>Apelido: Lua</p>
+            <button class="learn-more">Ler mais</button>
+        </div>
+
+        <div class="card">
+            <img src="img/cachorro bobao.jpg" alt="Foto do Animal 2">
+            <h2>Raça: Pitbull</h2>
+            <p>Personalidade: Cachorro caótico e bagunceiro, e atiçado</p>
+            <p>Apelido: Dog</p>
+            <button class="learn-more">Ler mais</button>
+        </div>
+    </div>
+
+
+    <div id="hamburguer" class="section">
+
+        <div id="menuHamburguer">
+            <button class="buttonHamburguer" id="showProductBtn" onclick="showAll()">Mostrar tudo</button>
+            <button class="buttonHamburguer" id="mapBtn" onclick="mapear()">Mapear</button>
+            <button class="buttonHamburguer" id="somarBtn" onclick="somarProducts()">Somar tudo</button>
+            <button class="buttonHamburguer" id="filtrarBtn">Filtrar <br> Veganos</button>
+            <ul class="ulHamburger">
+        </div>
+       
+        
+      
+
+        </ul>
+
+
+    </div>
+
+
+
+    <div id="mudar-tema" class="section">
+        <div class="color-theme">
+            <div class="sectionColor" id="sectPurple">
+            <button class="button-color" id="botaoRoxo" onclick="changeColor('purple')">Roxo</button>
+            <img src="./img/gengar-btn.png" alt="gengar" class="imgBtnTheme">
+        </div>  
+        <div class="sectionColor" id="sectBlue">
+            <button class="button-color" id="botaoAzul" onclick="changeColor('blue')">Azul</button>
+            <img src="/img/sonic (2).png" alt="sonic-btn" class="imgBtnTheme">
+        </div>
+        <div class="sectionColor" id="sectPink">
+            <button class="button-color" id="botaoRosa" onclick="changeColor('pink')">Rosa</button>
+            <img src="/img/02btn.png" alt="zerotwo" class="imgBtnTheme">
+        </div>
+        <div class="sectionColor" id="sectGreen">
+            <button class="button-color" id="botaoVerde" onclick="changeColor('green')">Verde</button>
+            <img src="/img/yusuke.png" alt="yusuke" class="imgBtnTheme">
+        </div>
+        <div class="sectionColor" id="sectRed">
+            <button class="button-color" id="botaoVermelho" onclick="changeColor('red')">Vermelho</button>
+            <img src="/img/knuckles.png" alt="knuckles" class="imgBtnTheme">
+        </div>
+        </div>
+        <div id="imagemContainer">
+        </div>
+
+
+
+        <script src="product.js"></script>
+
+        <script src="script.js"></script>
+</body>
+
+
+</html>

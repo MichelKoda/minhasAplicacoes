@@ -1,0 +1,733 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#botaoVerde {
+    color: white;
+    background-color: green;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#botaoVermelho {
+    color: white;
+    background-color: red;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#botaoAzul {
+    color: white;
+    background-color: blue;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#botaoRosa {
+    color: white;
+    background-color: pink;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#botaoRoxo {
+    color: white;
+    background-color: purple;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+body {
+    transition: background-color 0.5s ease;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: url(${imagemSrc});
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 999;
+
+}
+
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 10px 10px 10px;
+}
+
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+.buttona {
+    margin-right: 5px;
+    background: url('./lupa.png') no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+
+header {
+    display: flex;
+    gap: 10px;
+    align-self: flex-start;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    display: flex;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.8);
+}
+
+#area-de-pesquisa {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+
+#tempo {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.menu {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    display: inline-block;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: #555;
+}
+
+#jogo-da-velha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+table {
+
+
+    border-collapse: collapse;
+    background-color: #fff;
+    opacity: 52%;
+    margin-bottom: 20px;
+    margin: 0 auto;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+th {
+    background-color: lightgray;
+}
+
+.botoesJDV {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botoesJDV button {
+    margin: 0 10px;
+}
+
+#openPopupBtn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    max-height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+#lista-de-tarefas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    color: #2c3e50;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.checkbox-container {
+    margin-right: 10px;
+}
+
+.checkbox-container input {
+    margin-right: 5px;
+}
+
+
+#taskList li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+
+.deleteBtn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.deleteBtn:hover {
+    background-color: #e74c3c;
+}
+
+.pesquisa {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: #aaa;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+
+.section {
+    display: block;
+    justify-content: center;
+    height: 100vh;
+    width: 100vh;
+    align-items: center;
+    text-align: center;
+}
+
+#cronometro-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    text-decoration: #333;
+    background-color: #333;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media screen and (max-width: 600px) {
+    .popup {
+        width: 95%;
+        max-width: 95%;
+        height: auto;
+        max-height: 95vh;
+    }
+}
+
+#shop {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.card {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 7px;
+    line-height: 1;
+    margin-top: 20px;
+}
+
+.learn-more {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: #45a049;
+}
+
+#mudar-tema {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.imgSorteio {
+    margin-top: 50px;
+    height: 200px;
+    width: 200px;
+
+}
+
+.sorteioh2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: 26px;
+}
+
+.input-min,
+.input-max {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    height: 74px;
+    width: 342px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    color: #ffffff;
+
+    margin-right: 62px;
+    display: block;
+    margin: 10px auto;
+}
+
+
+.buttonSorteio {
+    background: #AEC346;
+    box-shadow: 0px 18px 40px rgba(174, 195, 70, 0.35);
+    border-radius: 10px;
+    width: 342px;
+    height: 72px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 80px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+.buttonSorteio:hover {
+    opacity: 0.9;
+}
+
+.buttonSorteio:active {
+    opacity: 0.5;
+}
+
+#sorteio {
+    text-align: center;
+    flex-direction: column;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task-text {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+#menuHamburguer {
+    margin: 30px 0;
+    display: inline-block;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    position: fixed;
+    top: 63px;
+
+
+}
+
+.ulHamburger {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    background-color: #333;
+    border-radius: 20px;
+}
+
+
+.product-item {
+    width: 200px;
+    height: auto;
+    border: 2px solid #8133ff;
+    text-align: center;
+    margin: 10px;
+    background-color: black;
+    border-radius: 10px;
+    align-items: center;
+
+}
+
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.product-item h2 {
+    color: white;
+}
+
+.textHam {
+    font-weight: bold;
+    color: #79cb15;
+    margin: 10px;
+}
+
+#jokenpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#jokenpo-items {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#text-jkp {
+    color: #333;
+}
+
+#buttons-jkp {
+    padding: 10px;
+    font-size: 70px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#rock {
+    background-color: #2980b9;
+    font-size: 70px;
+}
+
+#paper {
+    background-color: #45a049;
+    font-size: 70px;
+}
+
+#scissors {
+    background-color: #ff6347;
+    font-size: 70px;
+}
+
+#rock:hover {
+    opacity: 0.7;
+    transform: translateY(-5px);
+}
+
+#paper:hover {
+    opacity: 0.7;
+    transform: translateY(-5px);
+}
+
+#scissors:hover {
+    opacity: 0.7;
+    transform: translateY(-5px);
+}
+
+.your-score {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.your-score span {
+    color: #0e0eda;
+}
+
+.machine-score span {
+    color: crimson;
+}
+
+.machine-score {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.result {
+    font-weight: bold;
+    margin: 20px;
+}
+
+.textSum {
+    color: white;
+}
+
+.imgBtnTheme {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionColor {
+    display: flex;
+    background-color: rgba(250, 248, 248, 0.2);
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-theme{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.button-color:hover{
+    opacity: 0.5;
+    
+}
+
+.button-color{
+    transition: background-color 0.3s ease;
+}
+
+.sectionColor:hover{
+    transform: translateY(-5px);
+}
+
+#sectPurple{
+    background-color: rgba(119, 2, 228, 0.2) ;
+}
+#sectBlue{
+    background-color:rgba(31, 9, 198, 0.2) ;
+}
+#sectPink{
+    background-color: rgba(226, 54, 163, 0.2);
+}
+#sectGreen{
+    background-color: rgba(20, 187, 4, 0.2);
+}
+#sectRed{
+    background-color: rgba(221, 3, 3, 0.2);
+}
